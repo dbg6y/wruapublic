@@ -1,0 +1,89 @@
+{
+  "CLIM": {
+    "ARMN_CLIM": 0.012,
+    "ARCV_CLIM": 0.2,
+    "ADMN_CLIM": 0.012,
+    "ALDF_CLIM": 0.009,
+    "LRMN_CLIM": 0.5,
+    "LRCV_CLIM": 0.2,
+    "LDMN_CLIM": 0.1,
+    "ETMX_CLIM": 0.005,
+    "EWLT_CLIM": 0.0001,
+    "TSEA_CLIM": 110
+  },
+  "NTWK": {
+    "MGTD_NTWK": 8,
+    "AREA_NTWK": "15 * (1000**2)"
+  },
+  "SUBC": {
+    "SAMN_SUBC": "AREA_NTWK / (2 * MGTD_NTWK - 1)",
+    "EIRT_SUBC": 1.3,
+    "EAMN_SUBC": "SAMN_SUBC * (2 * MGTD_NTWK - 1)/ (MGTD_NTWK + (MGTD_NTWK - 1) / EIRT_SUBC)",
+    "EACV_SUBC": 0.2,
+    "IAMN_SUBC": "EAMN_SUBC / EIRT_SUBC",
+    "IACV_SUBC": 0.2,
+    "CTMU_SUBC": "24 / 24 / 1000**0.76",
+    "CTUV_SUBC": "0.75 * 60 * 60 * 24",
+    "CTWC_SUBC": "(3 / 2) * CTUV_SUBC",
+    "CTDC_SUBC": "1000 * 60 * 60 * 24",
+    "BFPR_SUBC": 0.5,
+    "APFC_SUBC": 100,
+    "FLMN_SUBC": "0.00001 * 60 * 60 * 24"
+  },
+  "SOIL": {
+    "KSAT_SOIL": 0.8,
+    "PORO_SOIL": 0.43,
+    "BETA_SOIL": 13.8,
+    "SHYG_SOIL": 0.14,
+    "SWLT_SOIL": 0.18,
+    "SSTR_SOIL": 0.46,
+    "SFLD_SOIL": 0.56
+  },
+  "CROP": {
+    "ZRCT_CROP": 0.5,
+    "ZRLC_CROP": 0.5,
+    "YMAX_CROP": 0.3,
+    "QPAR_CROP": 2,
+    "KPMN_CROP": 0.5,
+    "KPCV_CROP": 0.2,
+    "RPAR_CROP": 0.5,
+    "COST_CROP": 0.2,
+    "TGRW_CROP": 110
+  },
+  "CWPR": {
+    "NMMN_CWPR": 150,
+    "NMCV_CWPR": 0.2,
+    "HAMN_CWPR": 5000,
+    "HACV_CWPR": 0.2,
+    "HSMN_CWPR": 5,
+    "HSCV_CWPR": 0.2,
+    "CMIN_CWPR": 200,
+    "CAMO_CWPR": 10,
+    "PFMX_CWPR": 40,
+    "MBLM_CWPR": 3,
+    "COST_CWPR": 0.01,
+    "STOR_CWPR": 50,
+    "FLMN_CWPR": "0.0001 * 60 * 60 * 24"
+  },
+  "WRUA": {
+    "NCWP_WRUA": "int(2 * MGTD_NTWK - 1)",
+    "BYCT_WRUA": "False",
+    "FCRS_WRUA": 1.0,
+    "RDYS_WRUA": 1,
+    "ABMX_WRUA": 1000000000,
+    "FLMN_WRUA": "24 * 60 * 60 * 0.01",
+    "ABFC_WRUA": 1,
+    "SANC_WRUA": 0
+  },
+  "IRRG": {
+    "SMIN_IRRG": "SSTR_SOIL",
+    "SMAX_IRRG": "SFLD_SOIL"
+  },
+  "SIMU": {
+    "NMBR_SIMU": 2,
+    "NRUN_SIMU": 10000,
+    "BUFF_SIMU": "int(0.3 * TGRW_CROP)",
+    "INVL_SIMU": 24
+  },
+  "DBSE_FILE": "results/wruaresult.db"
+}
